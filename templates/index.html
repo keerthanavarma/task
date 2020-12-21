@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            body{
+                margin-top:15%;
+                margin-left:35%;
+                color:blue;
+            }
+            .card{
+                width:50%;
+                height:60%;
+                padding: 10px;
+                box-shadow: 5px 10px 18px #888888;
+            }
+            form{
+                margin-top:10%;
+            }
+            .alert{
+                width:40%;
+
+            }
+        </style>
+    </head>
+    <body>
+        {% with messages =get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-warning" role="alert">
+         
+     
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+        
+  
+          </div>
+          {% endif %}
+        {% endwith %}
+        <div class="container">
+            <div class="card">
+        <div class="align-self-center">
+        <h1>
+            Upload an excel file
+        </h1>
+    
+   
+    <form action="" method=post enctype=multipart/form-data><p>
+    <input type=file name=file><input type=submit value=Upload>
+    </form>
+    </div>
+    </div>
+    </div>
+    </body>
+</html>
